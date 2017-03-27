@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     EditText number;
     Button add_btn;
     ListView lViewSMS;
+
     final ArrayList  sms = new ArrayList();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,18 +34,22 @@ public class MainActivity extends AppCompatActivity {
                 Uri uriSms = Uri.parse("content://sms/inbox");
                 final Cursor cursor = getContentResolver().query(uriSms, new String[]{"_id", "address", "date", "body"},null,null,null);
 
-                cursor.moveToFirst();
+               // cursor.moveToFirst();
                 while  (cursor.moveToNext())
                 {
                     String address = cursor.getString(1);
+                    //Toast.makeText(getApplicationContext(),"Add: "+address+"\nnum: "+num,Toast.LENGTH_SHORT).show();
                     if(address.equals(num))
                     {
                         String body = cursor.getString(3);
 
                         sms.add("Address= " + address + "\n SMS = " + body);
-                        }
+
+                    //    Toast.makeText(getApplicationContext(),"i am in ",Toast.LENGTH_SHORT).show();
+                    }
 
                 }
+
                  ArrayAdapter adapter = new ArrayAdapter(getBaseContext(), android.R.layout.simple_list_item_1,sms);
                 lViewSMS.setAdapter(adapter);
             }
