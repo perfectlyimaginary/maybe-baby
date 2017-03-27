@@ -1,4 +1,4 @@
-package com.example.shree.mymap;
+package com.mytrendin.searchsms;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.shree.mymap", appContext.getPackageName());
+        assertEquals("com.mytrendin.searchsms", appContext.getPackageName());
     }
 }

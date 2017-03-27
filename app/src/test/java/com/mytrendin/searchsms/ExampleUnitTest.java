@@ -1,4 +1,4 @@
-package com.example.shree.mymap;
+package com.mytrendin.searchsms;
 
 import org.junit.Test;
 
